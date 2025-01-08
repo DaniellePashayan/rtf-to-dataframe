@@ -4,7 +4,10 @@ from classes import *
 
 ### USAGE EXAMPLE ###
 if __name__ == '__main__':
-    file_directory = 'tests/sample_files'
+    file_directory = ''
+    if not os.path.exists(file_directory):
+        raise FileNotFoundError(f"Directory {file_directory} not found")
+    
     files_to_process = os.listdir(file_directory)
     
     for file in files_to_process:
